@@ -47,3 +47,6 @@ win32-g++{
         QMAKE_CXXFLAGS += -std=c++0x -O0 -g3 -msse2 -fpic
     }
 }
+
+DISTFILES += \
+    README.md
