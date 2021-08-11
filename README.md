@@ -1,37 +1,28 @@
-# ts_tool
-Utility for extracting strings from .ts files for translation services.
+# QtLingo
+QtLingo is an Application to make Qt Translations easier,
+the normal flow would have you edit files and replace words with their Translations,
+this is too much work for me to do,
+so I decided to make it easier,
+run this Application and set up a project by giving it the folder location and name of your project,
+give it the location for where you want the .ts files,
+and a destination for the .qm files,
+and compile it,
+and it will give you the configuration for qmake or cmake,
+and just update your files with that code,
+and deploy your project,
+it is all done, nothing more to do.
 
-HOW TO USE:
+# GitHub Projects used
+I use to GitHub Applications for this,
+for Translations I use crow-translate at https://github.com/crow-translate/crow-translate,
+and QOnlineTranslator at https://github.com/crow-translate/QOnlineTranslator,
+and to parse the .ts files I use ts_tool at https://github.com/nen777w/ts_tool.
 
-ts_tool.exe --src v:\PROJECTS\CODIJY\ColorMagicGUI\translations\ColorMagic_EN.ts --dst t:\test\ --mode TXT
+# Process
+First I will update your projects Translations files according to the Languages you have chosen,
+then I will translate all the Languages,
+then update the Translations files and compile them into .qm files for deployment.
+# Credits
+Writen by Jeffrey Scott Flesher
 
-The utility take input .ts file, parse it with priority for <translation> tag (if <translation> is empty it use the <source>) and generate two files on output:
-
-.ts file with hash's
-.txt file in format [hash] "String for translation"
-i.e. for example .ts:
-...
-<message>
-<location filename="../shortcuts/shortcut_manager.cpp" line="30"></location>
-<source>Arm Tool</source>
-<translation>[08F5B2DC]</translation>
-</message>
-...
-
-.txt:
-...
-[08F5B2DC] "Arm Tool"
-...
-
-Then you can send .txt file for translation.
-After translation for insert translated strings back to .ts file use this command:
-
-ts_tool.exe --src t:\test\ --dst v:\PROJECTS\CODIJY\ColorMagicGUI\translations\ColorMagic_EN.ts --mode TS
-
-Additinal options:
-
---with-unfinished - for include unfinished records to result .txt file.
---with-vanished   - for include obsolete records to result .txt file. 
-
-
-/home/jflesher/Downloads/Qt-Translations/build-ts_tool-Desktop-Debug/_output/_bin/debug/ts_tool  --src /home/jflesher/workspace/QtAppVeyor/QtAppVeyor/translations/QtAppVeyor_en_US.ts  --dst /home/jflesher/workspace/QtAppVeyor/translations/ --mode TXT
+### End of File
